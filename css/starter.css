@@ -1,0 +1,303 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16pt; /* test for this! Make all sizes em or rem */
+    font-family: "Poppins", serif;
+    background-image: url(../images/concrete_seamless.png);
+    background-color: #f1f1f1;
+  }
+  
+
+  header{
+    background: #fff;
+    border-bottom: 3px solid #50C7C7;
+    margin-bottom: 20px;
+  }
+
+  h1{
+    font-size: 2em;
+    text-align: center;
+    line-height: 2;
+  }
+  
+  h2{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+  }
+  
+
+  p {
+    padding: 0 30px;
+  }
+  
+  a.skip{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+  
+  a.skip:focus{
+    top:20px;
+    color: black;
+    text-decoration-style: solid;
+  }
+  
+  *:focus{
+    border: 2px solid black;
+  }
+
+  .nav_item a{
+    padding: 10px;
+  }
+  
+  .nav_item a:hover, a:focus{
+    color: #50C7C7;
+    text-decoration: underline;
+    -webkit-text-decoration-style: dotted;
+            text-decoration-style: dotted;
+  }
+
+  .pricing {
+    min-height: 475px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .card {
+    margin: 12px;
+    background: #fff;
+    border-radius: 7px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 0 0 25px 0;
+    flex-basis: 450px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .card > ul{
+    list-style: none;
+    padding-left: 5px;
+  }
+  
+  .card > ul li {
+    width: 90%;
+    margin: 20px auto;
+    
+  }
+
+.card button{
+    width: 90%;
+    height: 40px;
+    border: 0;
+    margin-left: 5%;
+    border-radius: 7px;
+    background: #288080;
+    color: white;
+    font-size: 1em;
+  }
+  
+  .card h3{
+    font-size: 4em;
+    color: white;
+    text-align: center;
+  }
+
+  footer{
+    background-color: black;
+    color: white;
+    padding: 30px;
+    text-align: center;
+  }
+
+  #logo {
+    position: relative;
+    animation: mymove 5s 1;
+  }
+  
+  @keyframes mymove {
+    from {
+      width: 25px;
+      opacity: 0;
+    }
+    to {
+      width: 475px;
+      opacity: 1;
+    }
+  }
+
+  #logo {
+    width: 475px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav_links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav_links:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .card > header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+
+  .gallery img {
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    width: 300px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media all and (min-width: 900px) {
+
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    body > header {
+      position: sticky;
+      top: 0px;
+    }
+
+    .nav_links {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .pricing {
+      flex-basis: 275px;
+    }
+
+    .card {
+      flex-basis: 275px;
+    }
+
+  }
+
+  @media (prefers-reduced-motion) {
+
+    #logo {
+      animation: none;
+      width: 475px;
+    }
+
+  }
+
+  @media print {
+
+    #gallery {
+      display: none;
+      margin: 0px;
+    }
+
+    body {
+      font-family: Arial, Helvetica;
+      background-image: none;
+    }
+
+    nav {
+      width: 100%;
+    }
+
+    .nav_links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .pricing {
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .card {
+      border: solid 2px #45ADDD;
+      flex-basis: 325px;
+    }
+    
+    .card li:nth-child(2)::after {
+      content: "👍";
+    }
+    
+    .gallery {
+      display: none;
+    }
+  }
+  /*
+
+Edit the css for the pricing and card classes to match our example. Part of achieving this is by using a flex-property to specify a “size” of 275px. Notice that the elements do not have the same height, but do have the same width.
+
+Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. You can see an example of this in the video and in the screenshot at 1200px when scrolled. This is a challenge problem. You should not give or receive help when completing it.
+
+The following specifications are for when the user prefers reduced motion.  
+The logo class should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences. 
+
+The following specifications are for when the page is printed in portrait mode.  		
+View the print view from Firefox on regular sized paper in Portrait mode.
+
+
+Change the font on your body to Arial with a backup value of  Helvetica
+
+
+The background image should be removed. 
+
+
+Edit the nav/nav_links elements so that they are spaced according to the image above.
+
+
+Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height.
+
+
+The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px. 
+
+
+No part of the gallery should be visible.
+
+
+Without using list-style-type add the thumbs up entity as shown in the cards. This is a challenge problem. You should not give or receive help when completing it.**For some people the thumbs up is not printing as yellow. That is fine.
+
+You may have to update your print settings to include background graphics -
+
+  */
